@@ -2,7 +2,8 @@
 Title: Auto-Generate Captions for `<video>`
 Shortname: auto-generate-captions
 Level: None
-Status: wicg/FPWD
+Status: w3c/UD
+Group: WICG
 Repository: yashrajbharti/auto-generate-captions-video
 URL: https://yashrajbharti.github.io/auto-generate-captions-video
 Editor: Yash Raj Bharti, Independent Contributor https://github.com/yashrajbharti, yashrajbharti@example.com
