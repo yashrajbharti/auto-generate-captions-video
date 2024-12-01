@@ -18,11 +18,10 @@ Include MDN Panels: if possible
 Include Can I Use Panels: yes
 </pre>
 
-
 Introduction {#intro}
 =====================
 
-For now, see the [explainer]([https://yashrajbharti.github.io/auto-generate-captions-video]).
+For now, see the [explainer](https://yashrajbharti.github.io/auto-generate-captions-video).
 
 See [https://garykac.github.io/procspec/](https://garykac.github.io/procspec/),
 [https://dlaliberte.github.io/bikeshed-intro/index.html](https://dlaliberte.github.io/bikeshed-intro/index.html),
