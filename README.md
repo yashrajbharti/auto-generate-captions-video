@@ -1,31 +1,19 @@
-# Explainer for the TODO API
+# Explainer for the Auto-Generated Captions API
 
-**Instructions for the explainer author: Search for "todo" in this repository and update all the
-instances as appropriate. For the instances in `index.bs`, update the repository name, but you can
-leave the rest until you start the specification. Then delete the TODOs and this block of text.**
-
-This proposal is an early design sketch by [TODO: team] to describe the problem below and solicit
+This proposal is an early design sketch by Yash Raj Bharti to describe the problem below and solicit
 feedback on the proposed solution. It has not been approved to ship in Chrome.
-
-TODO: Fill in the whole explainer template below using https://tag.w3.org/explainers/ as a
-reference. Look for [brackets].
 
 ## Proponents
 
-- [Proponent team 1]
-- [Proponent team 2]
-- [etc.]
+- Yash Raj Bharti, Open Source Contributor, Liquid Galaxy (Google Open Source) Mentor
 
 ## Participate
-- https://github.com/explainers-by-googlers/[your-repository-name]/issues
-- [Discussion forum]
 
-## Table of Contents [if the explainer is longer than one printed page]
+- [GitHub Repository for Feedback](https://github.com/yashrajbharti/auto-generate-captions-video/issues)
 
-<!-- Update this table of contents by running `npx doctoc README.md` -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
 
+<!-- START doctoc generated TOC -->
 - [Introduction](#introduction)
 - [Goals](#goals)
 - [Non-goals](#non-goals)
@@ -33,145 +21,129 @@ reference. Look for [brackets].
 - [Use cases](#use-cases)
   - [Use case 1](#use-case-1)
   - [Use case 2](#use-case-2)
-- [[Potential Solution]](#potential-solution)
+- [Potential Solution](#potential-solution)
   - [How this solution would solve the use cases](#how-this-solution-would-solve-the-use-cases)
     - [Use case 1](#use-case-1-1)
     - [Use case 2](#use-case-2-1)
 - [Detailed design discussion](#detailed-design-discussion)
-  - [[Tricky design choice #1]](#tricky-design-choice-1)
-  - [[Tricky design choice 2]](#tricky-design-choice-2)
+  - [Tricky design choice #1](#tricky-design-choice-1)
+  - [Tricky design choice #2](#tricky-design-choice-2)
 - [Considered alternatives](#considered-alternatives)
-  - [[Alternative 1]](#alternative-1)
-  - [[Alternative 2]](#alternative-2)
+  - [Alternative 1](#alternative-1)
+  - [Alternative 2](#alternative-2)
 - [Stakeholder Feedback / Opposition](#stakeholder-feedback--opposition)
 - [References & acknowledgements](#references--acknowledgements)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- END doctoc generated TOC -->
 
 ## Introduction
 
-[The "executive summary" or "abstract".
-Explain in a few sentences what the goals of the project are,
-and a brief overview of how the solution works.
-This should be no more than 1-2 paragraphs.]
+Only **0.5% of web videos include a `<track>` tag** (source: *State of the Web 2024 Report*), leaving a majority of online video content inaccessible for individuals who rely on captions. This project proposes the `auto-generate` attribute to be added to the `<track>` element, enabling browsers to generate captions automatically. This solution aims to improve web accessibility and encourage widespread adoption of captions.
 
 ## Goals
 
-[What is the **end-user need** which this project aims to address? Make this section short, and
-elaborate in the Use cases section.]
+- Address the **accessibility gap** by promoting captions as a default feature on the web.
+- Enable developers to use an `auto-generate` attribute with the `<track>` element, allowing captions to be generated automatically.
+- Simplify the process of captioning for content creators, reducing manual effort.
+- Create a standardized approach to auto-generated captions, ensuring compatibility across browsers.
 
 ## Non-goals
 
-[If there are "adjacent" goals which may appear to be in scope but aren't,
-enumerate them here. This section may be fleshed out as your design progresses and you encounter necessary technical and other trade-offs.]
+- Replace manually created captions or subtitles.
+- Create a proprietary solution that only works with specific browsers or platforms.
+- Focus on live video streams (future scope).
 
 ## User research
 
-[If any user research has been conducted to inform your design choices,
-discuss the process and findings. User research should be more common than it is.]
+The proposal is informed by research indicating that captions improve content comprehension, user engagement, and accessibility for people with hearing impairments and non-native speakers. The **0.5% adoption rate** of `<track>` tags highlights the need for a low-effort solution for developers.
 
 ## Use cases
 
-[Describe in detail what problems end-users are facing, which this project is trying to solve. A
-common mistake in this section is to take a web developer's or server operator's perspective, which
-makes reviewers worry that the proposal will violate [RFC 8890, The Internet is for End
-Users](https://www.rfc-editor.org/rfc/rfc8890).]
-
 ### Use case 1
+
+A small business uploads product videos to their website but lacks the resources to create captions manually. By adding a `<track auto-generate="en">` element, they can ensure captions are generated automatically, enhancing accessibility and SEO.
 
 ### Use case 2
 
-<!-- In your initial explainer, you shouldn't be attached or appear attached to any of the potential
-solutions you describe below this. -->
+An educational platform hosts a library of lecture videos. By using the `auto-generate` attribute, they can provide captions in multiple languages without manually transcribing each lecture.
 
-## [Potential Solution]
+## Potential Solution
 
-[For each related element of the proposed solution - be it an additional JS method, a new object, a new element, a new concept etc., create a section which briefly describes it.]
+### Solution Details
 
-```js
-// Provide example code - not IDL - demonstrating the design of the feature.
+The `auto-generate` attribute will be added to the `<track>` element as follows:
 
-// If this API can be used on its own to address a user need,
-// link it back to one of the scenarios in the goals section.
-
-// If you need to show how to get the feature set up
-// (initialized, or using permissions, etc.), include that too.
+```html
+<video controls>
+  <source src="example.mp4" type="video/mp4">
+  <track kind="subtitles" auto-generate="en" label="English" />
+</video>
 ```
 
-[Where necessary, provide links to longer explanations of the relevant pre-existing concepts and API.
-If there is no suitable external documentation, you might like to provide supplementary information as an appendix in this document, and provide an internal link where appropriate.]
-
-[If this is already specced, link to the relevant section of the spec.]
-
-[If spec work is in progress, link to the PR or draft of the spec.]
-
-[If you have more potential solutions in mind, add ## Potential Solution 2, 3, etc. sections.]
+When the browser encounters the `auto-generate` attribute, it uses built-in speech recognition and language models to generate captions dynamically. These captions are displayed as if they were part of the original `<track>` element.
 
 ### How this solution would solve the use cases
 
-[If there are a suite of interacting APIs, show how they work together to solve the use cases described.]
-
 #### Use case 1
 
-[Description of the end-user scenario]
+Small businesses can ensure video captions are available without hiring transcription services.
 
-```js
-// Sample code demonstrating how to use these APIs to address that scenario.
+```html
+<video controls>
+  <source src="product-demo.mp4" type="video/mp4">
+  <track kind="subtitles" auto-generate="en" label="English" />
+</video>
 ```
 
 #### Use case 2
 
-[etc.]
+Educational platforms can provide multi-language captions using the same attribute.
+
+```html
+<video controls>
+  <source src="lecture.mp4" type="video/mp4">
+  <track kind="subtitles" auto-generate="es" label="Spanish" />
+</video>
+```
 
 ## Detailed design discussion
 
-### [Tricky design choice #1]
+### Tricky design choice #1
 
-[Talk through the tradeoffs in coming to the specific design point you want to make.]
+How should browsers handle the `auto-generate` attribute for unsupported languages?
 
-```js
-// Illustrated with example code.
-```
+Solution: Fallback to the default language or display a warning to the user.
 
-[This may be an open question,
-in which case you should link to any active discussion threads.]
+### Tricky design choice #2
 
-### [Tricky design choice 2]
+How can we prevent abuse or inaccurate captions from degrading the user experience?
 
-[etc.]
+Solution: Provide an optional `confidence-threshold` attribute to control caption quality.
 
 ## Considered alternatives
 
-[This should include as many alternatives as you can,
-from high level architectural decisions down to alternative naming choices.]
+### Alternative 1
 
-### [Alternative 1]
+Add the `auto-generate` attribute directly to the `<video>` element.
 
-[Describe an alternative which was considered,
-and why you decided against it.]
+Rejected: Lacks flexibility for multi-language support.
 
-### [Alternative 2]
+### Alternative 2
 
-[etc.]
+Leave caption generation to external tools.
+
+Rejected: Adds complexity for developers and excludes dynamic web content.
 
 ## Stakeholder Feedback / Opposition
 
-[Implementors and other stakeholders may already have publicly stated positions on this work. If you can, list them here with links to evidence as appropriate.]
-
-- [Implementor A] : Positive
-- [Stakeholder B] : No signals
-- [Implementor C] : Negative
-
-[If appropriate, explain the reasons given by other implementors for their concerns.]
+- **Positive Feedback**: Accessibility advocates emphasize the importance of lowering barriers to captioning.
+- **Negative Feedback**: Some concerns about performance impacts for large video libraries.
 
 ## References & acknowledgements
 
-[Your design will change and be informed by many people; acknowledge them in an ongoing way! It helps build community and, as we only get by through the contributions of many, is only fair.]
-
-[Unless you have a specific reason not to, these should be in alphabetical order.]
-
 Many thanks for valuable feedback and advice from:
 
-- [Person 1]
-- [Person 2]
-- [etc.]
+- [Thomas Steiner](https://twitter.com/tomayac), Google DevRel
+- The Chrome Team
+- The State of the Web Report 2024
+
+---
