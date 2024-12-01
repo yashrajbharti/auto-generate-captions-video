@@ -140,7 +140,7 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 ## References & acknowledgements
 
-Many thanks for valuable feedback and advice from:
+Many thanks for valuable feedback / advice / support from:
 
 - [Thomas Steiner](https://twitter.com/tomayac), Google DevRel
 - The Chrome Team
