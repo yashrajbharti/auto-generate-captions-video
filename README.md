@@ -38,7 +38,7 @@ feedback on the proposed solution. It has not been approved to ship in Chrome.
 
 ## Introduction
 
-Only **0.5% of web videos include a `<track>` tag** (source: *State of the Web 2024 Report*), leaving a majority of online video content inaccessible for individuals who rely on captions. This project proposes the `auto-generate` attribute to be added to the `<track>` element, enabling browsers to generate captions automatically. This solution aims to improve web accessibility and encourage widespread adoption of captions.
+Only **0.5% of web videos include a `<track>` tag** (source: *[The Web Almanac by HTTP Archive 2024 Report](https://almanac.httparchive.org/en/2024/accessibility#audio-and-video)*), leaving a majority of online video content inaccessible for individuals who rely on captions. This project proposes the `auto-generate` attribute to be added to the `<track>` element, enabling browsers to generate captions automatically. This solution aims to improve web accessibility and encourage widespread adoption of captions.
 
 ## Goals
 
@@ -172,6 +172,6 @@ Many thanks for valuable feedback / advice / support from:
 
 - [Thomas Steiner](https://twitter.com/tomayac), Google DevRel
 - The Chrome Team
-- The State of the Web Report 2024
+- [The Web Almanac by HTTP Archive 2024](https://almanac.httparchive.org/en/2024/accessibility#audio-and-video)
 
 ---
