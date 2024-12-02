@@ -164,7 +164,6 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
    - **Answer:**  
      To address mismatches between captions and spoken content, the API could include:
        - A **synchronization buffer** to align captions better with audio tracks.
-       - An optional `preview` mode for developers to review auto-generated captions before publishing.
        - A confidence threshold attribute to prevent low-quality captions from being displayed.
 
 ## References & acknowledgements
