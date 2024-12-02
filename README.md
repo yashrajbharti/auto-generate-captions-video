@@ -32,6 +32,7 @@ feedback on the proposed solution. It has not been approved to ship in Chrome.
   - [Alternative 1](#alternative-1)
   - [Alternative 2](#alternative-2)
 - [Stakeholder Feedback / Opposition](#stakeholder-feedback--opposition)
+- [Feedback Q&A](#feedback-qa)
 - [References & acknowledgements](#references--acknowledgements)
 <!-- END doctoc generated TOC -->
 
@@ -137,6 +138,34 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 - **Positive Feedback**: Accessibility advocates emphasize the importance of lowering barriers to captioning.
 - **Negative Feedback**: Some concerns about performance impacts for large video libraries.
+
+## Feedback Q&A
+
+### 1. **What if this leads to even fewer people manually creating subtitles?**
+   - **Answer:**  
+     While manual captions are often more accurate and tailored, the `auto-generate` feature is designed as a complementary tool, not a replacement. The intent is to provide captions where none exist, improving accessibility immediately. To mitigate dependency on automation, the browser could display a message or badge indicating that captions are auto-generated, encouraging content creators to manually improve them when possible.
+
+### 2. **Does it make sense for every user who watches a video to run the same subtitle creation steps repeatedly, or would it be better to run this once on the server and deliver the same subtitles to everyone?**
+   - **Answer:**  
+     Generating captions on the server could indeed save computational resources and ensure consistency across users. However, there are trade-offs:
+       - **Server-side generation**: Requires content creators to implement additional infrastructure.
+       - **Client-side generation**: Offers flexibility, especially for dynamic or user-specific content (e.g., captions based on regional dialects or personalization).  
+     To balance this, the API could prioritize caching generated captions locally or storing them for reuse, reducing repetitive computation.
+
+### 3. **What about videos on the web where it’s a live stream?**
+   - **Answer:**  
+     For live-streamed videos, storing captions on a server is not applicable, as the captions must be generated in real time. The `auto-generate` feature is essential for such cases, enabling immediate accessibility without requiring pre-existing infrastructure. Real-time generation ensures that live events remain inclusive to viewers who rely on captions.
+
+### 4. **How would it deal with a translated language that has very long words?**
+   - **Answer:**  
+     Handling text overflow for translated captions is a valid concern. The `auto-generate` API can leverage browser styling rules, such as word wrapping or adjustable font sizes. Additionally, developers could specify optional attributes like `truncate` or `wrap` to control how captions are displayed. A fallback mechanism could also allow manual adjustments for languages with significantly different word lengths.
+
+### 5. **What if the generated subtitles don't fit the originally spoken parts?**
+   - **Answer:**  
+     To address mismatches between captions and spoken content, the API could include:
+       - A **synchronization buffer** to align captions better with audio tracks.
+       - An optional `preview` mode for developers to review auto-generated captions before publishing.
+       - A confidence threshold attribute to prevent low-quality captions from being displayed.
 
 ## References & acknowledgements
 
