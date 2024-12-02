@@ -170,7 +170,8 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 Many thanks for valuable feedback / advice / support from:
 
-- [Thomas Steiner](https://twitter.com/tomayac), Google DevRel
+- [Thomas Steiner](https://github.com/tomayac), Google
+- [Adam Argyle](https://github.com/argyleink), Google
 - The Chrome Team
 - [The Web Almanac by HTTP Archive 2024](https://almanac.httparchive.org/en/2024/accessibility#audio-and-video)
 
