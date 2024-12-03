@@ -118,7 +118,7 @@ Solution: Fallback to the default language or display a warning to the user.
 
 How can we prevent abuse or inaccurate captions from degrading the user experience?
 
-Solution: Provide an optional `confidence-threshold` attribute to control caption quality.
+Solution: Provide an optional `confidence` attribute to control caption quality.
 
 ## Considered alternatives
 
