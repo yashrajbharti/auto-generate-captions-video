@@ -57,6 +57,10 @@ Only **0.5% of web videos include a `<track>` tag** (source: *[The Web Almanac b
 
 The proposal is informed by research indicating that captions improve content comprehension, user engagement, and accessibility for people with hearing impairments and non-native speakers. The **0.5% adoption rate** of `<track>` tags highlights the need for a low-effort solution for developers.
 
+## Working Example
+
+Using web technologies (HTML, CSS and JS) combined with whisper API models by HuggingFace's transformer.js, here's a [working example](https://yashrajbharti.github.io/captions-on-the-fly/src/example.html) with the [github repo here](https://github.com/yashrajbharti/captions-on-the-fly). The example captures how the auto-captions will appear and could be used and is available in both Vanilla JS and as a Chrome extension. 
+
 ## Use cases
 
 ### Use case 1
