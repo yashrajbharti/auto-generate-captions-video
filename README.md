@@ -59,7 +59,7 @@ The proposal is informed by research indicating that captions improve content co
 
 ## Working Example
 
-Using web technologies (HTML, CSS and JS) combined with whisper API models by HuggingFace's transformer.js, here's a [working example](https://yashrajbharti.github.io/captions-on-the-fly/src/example.html) with the [github repo here](https://github.com/yashrajbharti/captions-on-the-fly). The example demonstrates how the auto-captions will appear and can be used. It is available in both Vanilla JS and as a Chrome extension. To see it working simply upload a video and play and the captions will automatically appear
+Using web technologies (HTML, CSS and JS) combined with whisper API models by HuggingFace's transformer.js, here's a working example of [autogenerate captions](https://yashrajbharti.github.io/captions-on-the-fly/src/example.html) from this [github repo for Captions on the fly](https://github.com/yashrajbharti/captions-on-the-fly). 
 
 ## Use cases
 
