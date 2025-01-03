@@ -159,6 +159,7 @@ Many thanks for valuable feedback / advice / support from:
 
 - [Thomas Steiner](https://github.com/tomayac), Google
 - [Adam Argyle](https://github.com/argyleink), Google
+- [Dirk Ginader](https://github.com/ginader), Google
 - [Mike Smith](https://github.com/sideshowbarker), W3C
 - [The Web Almanac by HTTP Archive 2024](https://almanac.httparchive.org/en/2024/accessibility#audio-and-video)
 
