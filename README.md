@@ -137,19 +137,23 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 - **Answer:** Server-side generation ensures consistency and reduces computational load for users, but client-side generation offers flexibility for dynamic or personalized content. A hybrid approach—generating and caching captions locally—could optimize performance.
 
-### 3. **What about videos on the web where it’s a live stream?**
+### 3. **Could a centralized storage solution help reduce energy waste by avoiding repeated caption generation?**
+
+- **Answer:** Yes, a centralized storage system could significantly reduce redundancy and energy usage. For example, captions could be generated once and stored on a server or within a content delivery network (CDN). Subsequent users accessing the same video would retrieve pre-generated captions, saving computational resources. This approach would require careful consideration of storage costs, privacy, and synchronization across devices.
+
+### 4. **What about videos on the web where it’s a live stream?**
 
 - **Answer:** For live-streamed videos, real-time caption generation is essential. The proposed built-in feature is designed to handle such cases, ensuring accessibility for live events.
 
-### 4. **How would it deal with a translated language that has very long words?**
+### 5. **How would it deal with a translated language that has very long words?**
 
 - **Answer:** Browsers can handle text overflow by applying word wrapping, truncation, or adjustable font sizes. Developers could also provide styling options for captions to manage layout constraints.
 
-### 5. **What if the generated subtitles don't fit the originally spoken parts?**
+### 6. **What if the generated subtitles don't fit the originally spoken parts?**
 
 - **Answer:** The feature can include synchronization buffers and confidence thresholds to align captions with spoken content and suppress low-quality captions.
 
-### 6. **Why are we not adding auto captions to the track element?**
+### 7. **Why are we not adding auto captions to the track element?**
 
 - **Answer:** The `<track>` element by definition says, “Captions exist for this video, and this element provides them.” Introducing a case where a `<track>` element indicates, “Captions don’t exist, but the UA should generate them,” contradicts this purpose. Instead, leveraging the absence of a `<track>` element as a signal for auto-generation better aligns with the intent of the standard.
 
