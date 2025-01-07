@@ -72,8 +72,6 @@ An educational platform hosts a library of lecture videos. By leveraging the bro
 
 ### Use case 3
 
-**Real-life Situations Requiring Text Support**
-
 In environments like the metro, train, or library, where audio cannot be played out loud, auto-generated captions enable users to follow video content silently. This feature improves usability and accessibility, especially for people who rely on visual text cues in noise-sensitive or quiet environments.
 
 ## Potential Solution
@@ -169,10 +167,10 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 - **Answer:** The `<track>` element by definition says, “Captions exist for this video, and this element provides them.” Introducing a case where a `<track>` element indicates, “Captions don’t exist, but the UA should generate them,” contradicts this purpose. Instead, leveraging the absence of a `<track>` element as a signal for auto-generation better aligns with the intent of the standard.
 
-#### 8. **Real-time captioning for live videos may have performance issues.**
+### 8. **Real-time captioning for live videos may have performance issues.**
 - **Answer:** Real-time video captioning for live streams is challenging due to performance constraints. While initial implementations may not be perfect, rigorous testing and advancements in balancing model size and efficiency can help optimize this feature over time.
 
-#### 9. **Could expressive captions improve user engagement?**
+### 9. **Could expressive captions improve user engagement?**
 - **Answer:** Yes, incorporating expressive captions, similar to features seen on Google Pixel and Android devices, could enhance user experience. By including additional contextual or emotional cues, such captions would lay the foundation for more immersive accessibility solutions.
 
 ## References & acknowledgements
