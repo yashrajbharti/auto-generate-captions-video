@@ -19,10 +19,12 @@ This proposal is an early design sketch by Yash Raj Bharti to describe the probl
 - [Use cases](#use-cases)
   - [Use case 1](#use-case-1)
   - [Use case 2](#use-case-2)
+  - [Use case 3](#use-case-3)
 - [Potential Solution](#potential-solution)
   - [How this solution would solve the use cases](#how-this-solution-would-solve-the-use-cases)
     - [Use case 1](#use-case-1-1)
     - [Use case 2](#use-case-2-1)
+    - [Use case 3](#use-case-3-1)
 - [Detailed design discussion](#detailed-design-discussion)
   - [Tricky design choice #1](#tricky-design-choice-1)
   - [Tricky design choice #2](#tricky-design-choice-2)
@@ -68,6 +70,12 @@ A small business uploads product videos to their website but lacks the resources
 
 An educational platform hosts a library of lecture videos. By leveraging the browser’s built-in captioning option, viewers can enable captions in their preferred language without requiring the platform to provide them manually.
 
+### Use case 3
+
+**Real-life Situations Requiring Text Support**
+
+In environments like the metro, train, or library, where audio cannot be played out loud, auto-generated captions enable users to follow video content silently. This feature improves usability and accessibility, especially for people who rely on visual text cues in noise-sensitive or quiet environments.
+
 ## Potential Solution
 
 ### Solution Details
@@ -93,6 +101,10 @@ Small businesses can rely on the browser’s built-in captions feature to make t
 #### Use case 2
 
 Educational platforms can provide multi-language captions through the browser’s built-in UI, reducing the need for manual transcription efforts.
+
+### Use case 3
+
+Users in such environments (the metro, train, or library), can rely on auto-generated captions without need for additional hardware or software.
 
 ## Detailed design discussion
 
@@ -157,6 +169,12 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 - **Answer:** The `<track>` element by definition says, “Captions exist for this video, and this element provides them.” Introducing a case where a `<track>` element indicates, “Captions don’t exist, but the UA should generate them,” contradicts this purpose. Instead, leveraging the absence of a `<track>` element as a signal for auto-generation better aligns with the intent of the standard.
 
+#### 8. **Real-time captioning for live videos may have performance issues.**
+- **Answer:** Real-time video captioning for live streams is challenging due to performance constraints. While initial implementations may not be perfect, rigorous testing and advancements in balancing model size and efficiency can help optimize this feature over time.
+
+#### 9. **Could expressive captions improve user engagement?**
+- **Answer:** Yes, incorporating expressive captions, similar to features seen on Google Pixel and Android devices, could enhance user experience. By including additional contextual or emotional cues, such captions would lay the foundation for more immersive accessibility solutions.
+
 ## References & acknowledgements
 
 Many thanks for valuable feedback / advice / support from:
@@ -164,6 +182,7 @@ Many thanks for valuable feedback / advice / support from:
 - [Thomas Steiner](https://github.com/tomayac), Google
 - [Adam Argyle](https://github.com/argyleink), Google
 - [Dirk Ginader](https://github.com/ginader), Google
+- [Kenji Baheux](https://github.com/kenjibaheux), Google
 - [Mike Smith](https://github.com/sideshowbarker), W3C
 - [The Web Almanac by HTTP Archive 2024](https://almanac.httparchive.org/en/2024/accessibility#audio-and-video)
 
