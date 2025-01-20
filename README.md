@@ -107,8 +107,8 @@ const transcribeAudioChunks = async (audioChunks) => {
 
   // Define configuration for transcription
   const config = {
-    chunk_length_s: 30, // Length of each audio chunk in seconds
-    stride_length_s: 5,  // Overlap between chunks
+    chunk_length: 30, // Length of each audio chunk in seconds
+    stride_length: 5, // Overlap between chunks
     return_timestamps: true, // Include timestamps in the transcription
   };
 
@@ -143,7 +143,7 @@ const getAudioTranscription = async () => {
 const someAudio = getAudio() // Float32Array;
 const transcription = await transcriber.transcribe(someAudio);
 console.log(transcription);
-// Output: 'Hello and a warm welcome to the Early Preview Program!'
+// Output: [{"timestamp":[0,6.32],"text":"Hello and a warm welcome to the Early Preview Program!"}]
 ```
 
 ### How this solution would solve the use cases
