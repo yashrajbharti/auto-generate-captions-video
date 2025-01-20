@@ -90,6 +90,62 @@ For example:
 
 When the browser detects the absence of a `<track>` element, it displays a captions button in the video player controls. Clicking the button triggers the browser’s built-in speech recognition and language models to generate captions dynamically.
 
+### Using Chrome Transcribe API
+
+```js
+const transcribeAudioChunks = async (audioChunks) => {
+
+  // Check if transcription is available
+  const canTranscribe = await transcription.canTranscribe(); // 'readiliy' when available
+  if (canTranscribe === 'no') {
+    console.error("Transcription model is not available.");
+    return null;
+  }
+
+  // Create a transcriber instance
+  const transcriber = await transcription.createTranscriber();
+
+  // Define configuration for transcription
+  const config = {
+    chunk_length_s: 30, // Length of each audio chunk in seconds
+    stride_length_s: 5,  // Overlap between chunks
+    return_timestamps: true, // Include timestamps in the transcription
+  };
+
+  // Process audio chunks
+  const transcriptionResults = [];
+  for (const audioChunk of audioChunks) {
+    const result = await transcriber.transcribe(audioChunk, config);
+    transcriptionResults.push(result.text); // Collect text from each chunk
+  }
+
+  // Combine and return the full transcription
+  return transcriptionResults.join(' ');
+}
+
+// Example Usage
+const getAudioTranscription = async () => {
+
+  const audioChunks = getAudioChunks()
+  // Transcribe the audio chunks
+  const transcription = await transcribeAudioChunks(audioChunks);
+
+  // Output the result
+  if (transcription) {
+    console.log("Full Transcription:", transcription);
+  }
+}
+```
+
+### Example Interaction with the API
+
+```js
+const someAudio = getAudio() // Float32Array;
+const transcription = await transcriber.transcribe(someAudio);
+console.log(transcription);
+// Output: 'Hello and a warm welcome to the Early Preview Program!'
+```
+
 ### How this solution would solve the use cases
 
 #### Use case 1
