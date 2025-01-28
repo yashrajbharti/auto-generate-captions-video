@@ -205,7 +205,7 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 ### 3. **Could a centralized storage solution help reduce energy waste by avoiding repeated caption generation?**
 
-- **Answer:** Yes, a centralized storage system could significantly reduce redundancy and energy usage. For example, captions could be generated once and stored on a server or within a content delivery network (CDN). Subsequent users accessing the same video would retrieve pre-generated captions, saving computational resources. This approach would require careful consideration of storage costs, privacy, and synchronization across devices.
+- **Answer:** Yes, a centralized storage system could significantly reduce redundancy and energy usage. It's an established principle that minimizing redundant data downloads and storage is inherently beneficial for sustainability. The [Ethical Web Principles](https://w3ctag.github.io/ethical-web-principles/) specifically highlight that the Web [_"is an environmentally sustainable platform"_](https://w3ctag.github.io/ethical-web-principles/#sustainable) and suggest _"lowering carbon emissions by minimizing data storage and processing requirements"_ as measures to get there. Consequently, one of the key objectives is to reduce redundancy and energy usage, thus captions could be generated once and stored on a server or within a content delivery network (CDN). Subsequent users accessing the same video would retrieve pre-generated captions, saving computational resources. This approach would require careful consideration of storage costs, privacy, and synchronization across devices.
 
 ### 4. **What about videos on the web where it’s a live stream?**
 
@@ -228,6 +228,12 @@ Rejected: Adds complexity for developers and excludes dynamic web content.
 
 ### 9. **Could expressive captions improve user engagement?**
 - **Answer:** Yes, incorporating expressive captions, similar to features seen on Google Pixel and Android devices, could enhance user experience. By including additional contextual or emotional cues, such captions would lay the foundation for more immersive accessibility solutions.
+
+### 10. **Could auto-generated captions be worse than nothing?**
+- **Answer:** No, Sarah Horton, an Invited Expert at the WCAG, emphasizes that while there was a time when auto-caption generation wasn’t good enough, we’ve now reached a point where auto-captioning is better than having no captions at all. Although minimal cleanup might still be necessary, auto-generated captions provided by user agents are now worth it and a viable solution for improving accessibility.
+
+### 11. **Are auto-generated timestamps more accurate than manual creation?**
+- **Answer:** Yes, David Sloan, Chief Accessibility Officer at TPGi, highlights that AI excels at generating precise timestamps, reducing the risk of human error and significantly saving time and effort. This enables content creators to focus on refining captions or addressing specific needs, such as censorship, rather than creating them from scratch. Fixing captions instead of starting from scratch is a major step forward for accessible content creation.
 
 ## References & acknowledgements
 
